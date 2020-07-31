@@ -59,7 +59,7 @@ pipeline {
 	       steps{
 			sshagent(['dev-server']) {
 			bat "mkdir ~/.ssh && ssh-keyscan >> ~/.ssh/known_hosts"
-			bat "ssh -o StrictHostKeyChecking=no ec2-user@54.209.183.237 sudo dokcer run debaduttapradhan1996/shopizer-app:latest"
+			bat "ssh -o StrictHostKeyChecking=no ec2-user@54.209.183.237 sudo dokcer run kt98/shopizer-app:latest"
 			}
 	   	}
    }
