@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('SCM') {
       steps {
-         git 'https://github.com/Debadutta-Pradhan/shopizer.git'
+         git 'https://github.com/k-98/shopizer.git'
        }
     }
    stage("Build") {
@@ -34,7 +34,7 @@ pipeline {
 	      steps {
 		bat '''
 			  cd sm-shop
-			  docker build -f "Dockerfile" -t debaduttapradhan1996/shopizer-app:latest .
+			  docker build -f "Dockerfile" -t kt98/shopizer-app:latest .
 			 
 		  
 		'''
@@ -45,7 +45,7 @@ pipeline {
 	  steps{
 		    withDockerRegistry([ credentialsId: "Docker_Hub", url: "" ]){
 			
-			bat "docker push debaduttapradhan1996/shopizer-app:latest"   
+			bat "docker push kt98/shopizer-app:latest"   
 	  	   }
 	   }
        } 
